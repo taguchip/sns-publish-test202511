@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>X タイムライン埋め込みテスト</title>
 </head>
 <body>
@@ -18,22 +18,14 @@
   </a>
 
   <script>
-    window.addEventListener('error', e => console.log('Error:', e.message));
     window.addEventListener('load', () => {
       console.log('page loaded. twttr?', !!window.twttr);
-      if (window.twttr?.widgets?.load) {
-        console.log('calling twttr.widgets.load()');
-        window.twttr.widgets.load();
-      } else {
-        console.log('widgets.js not present yet');
-      }
+      if (window.twttr?.widgets?.load) window.twttr.widgets.load();
     });
   </script>
   <script async src="https://platform.twitter.com/widgets.js"
           charset="utf-8"
           onload="console.log('widgets.js loaded')"
           onerror="console.log('widgets.js failed to load (blocked?)')"></script>
-
-  <noscript>JavaScript を有効にするとタイムラインが表示されます。</noscript>
 </body>
 </html>
